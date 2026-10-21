@@ -70,8 +70,8 @@ Homebrew (for macOS users)
 
 .. warning::
 
-    You're not done yet! You MUST install the git hooks for every repo that
-    you wish to use with ``git secrets --install``.
+    **You're not done yet! You MUST install the git hooks for every repo that
+    you wish to use with** ``git secrets --install``.
 
 Here's a quick example of how to ensure a git repository is scanned for secrets
 on each commit::
@@ -163,6 +163,7 @@ Each of these options must appear first on the command line.
     checks are added:
 
     - AWS Access Key IDs via ``(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}``
+    - Amazon Bedrock API keys. Long-lived via ``ABSK[A-Za-z0-9+/]{109,}=*`` and short-lived via ``bedrock-api-key-YmVkcm9jay5hbWF6b25hd3MuY29t``
     - AWS Secret Access Key assignments via ":" or "=" surrounded by optional
       quotes
     - AWS account ID assignments via ":" or "=" surrounded by optional quotes
@@ -329,7 +330,7 @@ Options for ``--add``
 
 ``-a, --allowed``
     Mark the pattern as allowed instead of prohibited. Allowed patterns are
-    used to filter our false positives.
+    used to filter out false positives.
 
 ``<pattern>``
     The regex pattern to search.
